@@ -1,5 +1,6 @@
-class stack:
-  stack=[]
+class Stack:
+  def __init__(self):
+    self.stack=[]
 
   def is_empty(self):
     return len(self.stack) == 0
@@ -23,13 +24,13 @@ class stack:
     return len(self.stack)
 
 if __name__=='__main__':
-  stack=stack()
+  stack=Stack()
   stack.push(1);
   stack.push(2);
   stack.push(3);
-  print("The elements are:",stack.stack())
+  print("The elements are:",stack.stack)
   stack.pop()
-  print("The elements are:",stack.stack())
+  print("The elements are:",stack.stack)
   print("The top most element in the stack:",stack.peek())
   print("The size of the stack:",stack.size())
       
