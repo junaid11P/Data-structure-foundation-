@@ -1,2 +1,4 @@
-# Data-structure-foundation-
-This is my 3rd semester data structure foundation code
+# Data-structure-foundation-python
+This is my 3rd semester data structure foundation codes:-
+
+1. stack using array 
