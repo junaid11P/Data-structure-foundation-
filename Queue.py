@@ -1,8 +1,8 @@
 class Queue:
     def __init__(self):
         self.queue = []
-        self.front = 0
-        self.rear = 0
+        self.front =0
+        self.rear =0
 
     def is_empty(self):
         return len(self.queue) == 0
@@ -20,10 +20,11 @@ class Queue:
             self.queue.append(item)
 
     def dequeue(self):
-        if self.is_empty():
-            print("The queue is empty")
-        else:
-            self.front += 1
+        if self.front == -1:
+            print("Queue is empty. Cannot dequeue.")
+            return None
+        item = self.queue.pop(0)
+        self.rear -=1
 
     def peek(self):
         if self.is_empty():
