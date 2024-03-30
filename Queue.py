@@ -1,8 +1,8 @@
 class Queue:
     def __init__(self):
         self.queue = []
-        self.front = -1
-        self.rear = -1
+        self.front = 0
+        self.rear = 0
 
     def is_empty(self):
         return len(self.queue) == 0
