@@ -78,7 +78,7 @@ class Linkedlist:
                 previousNode = currentNode
                 currentNode = currentNode.next
 
-        if previousNode:  # Check if element found
+        if previousNode:  
             previousNode.next = currentNode.next
             return currentNode.data
         else:
@@ -100,7 +100,7 @@ class Linkedlist:
         if previousNode:
             previousNode.next = None
         else:
-            self.head = None  # Handle case of deleting the only node
+            self.head = None  
         self.size -= 1
         return deletedValue
 
@@ -118,6 +118,7 @@ if __name__=="__main__":
     l1.insert_in_between(81,45)
     l1.insert_in_between(89,42)
     l1.insertAtTail(90)
+    l1.traverseLinkedlist()
     print("Deleted value is:",l1.deleteAtTail())
     print("Deleted value is:",l1.delete_in_between(23))    
     l1.traverseLinkedlist()
