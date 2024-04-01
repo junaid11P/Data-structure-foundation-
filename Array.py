@@ -1,62 +1,71 @@
-class Array:
+class Data:
     def __init__(self, capacity=10):
         self.data = [None] * capacity
         self.size = 0
         self.capacity = capacity
 
-    def insertAtLast(self, element):
-        if self.size == self.capacity:
-            print("Array Overflow")
-            return
-        self.data[self.size] = element
-        self.size += 1
+    def display(self):
+        print("Array elements are:")
+        for element in self.data[:self.size]:
+            print(element, end=" ")
+        print()
 
-    def insert_in_between(self, index, element):
+    def insert(self, index, value):
         if self.size == self.capacity:
-            print("Array Overflow")
-            return
+            print("Array Overflow. Resizing...")
+            self.resize(self.capacity * 2)
+
         for i in range(self.size, index, -1):
             self.data[i] = self.data[i - 1]
-        self.data[index] = element
+
+        self.data[index] = value
         self.size += 1
 
-    def insertAtFirst(self, element):
-        self.insert_in_between(0, element)
-
-    def deleteAtLast(self):
+    def delete(self, index):
         if self.size == 0:
-            print("Array Underflow/empty, delete can't be performed")
+            print("Array Underflow")
             return
-        deletedValue = self.data[self.size - 1]
-        self.data[self.size - 1] = None
-        self.size -= 1
-        return deletedValue
 
-    def delete_at_given_index(self, index):
-        if self.size == 0 or (index < 0 or index > self.size - 1):
-            print("Array is empty or given index is invalid")
-            return
-        deletedValue = self.data[index]
-        for i in range(index, self.size):
+        deleted_element = self.data[index]
+        self.data[index] = None
+
+        for i in range(index, self.size - 1):
             self.data[i] = self.data[i + 1]
+
         self.size -= 1
-        return deletedValue
 
-    def deleteAtHead(self):
-        return self.delete_at_given_index(0)
+    def search_by_value(self, value):
+        if value in self.data[:self.size]:
+            index = self.data.index(value)
+            print("Element", value, "found at index", index)
+        else:
+            print("Element", value, "not found in the data.")
 
+    def update(self, index, new_value):
+        if 0 <= index < self.size:
+            old_value = self.data[index]
+            self.data[index] = new_value
+            print("Element at index", index, "updated from", old_value, "to", new_value)
+        else:
+            print("Invalid index for update.")
+
+    def resize(self, new_capacity):
+        self.capacity = new_capacity
+        self.data = self.data[:self.size] + [None] * (new_capacity - self.size)
 
 if __name__ == "__main__":
-    array1 = Array(15)
-    array2 = Array(15)
-    print(array1.data)
-    array1.insertAtLast(15)
-    array1.insertAtLast(21)
-    array1.insertAtLast(10)
-    array1.insert_in_between(1, 34)
-    array1.insertAtFirst(56)
-    print(array1.data)
-    print("deleted value is: ", array1.deleteAtLast())
-    print("Deleted value is: ", array1.delete_at_given_index(1))
-    print("Deleted value is: ", array1.deleteAtHead())
-    print(array1.data)
+
+    a1 = Data(10)
+    a1.display()
+    a1.insert(0, 20)
+    a1.insert(1, 30)
+    a1.insert(2, 40)
+    a1.insert(3, 50)
+    a1.display()
+    a1.insert(2, 100)
+    a1.delete(1)
+    a1.display()
+
+    a1.search_by_value(20)
+    a1.update(0, 8)
+    a1.display()
