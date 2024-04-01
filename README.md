@@ -11,4 +11,7 @@ This is my 3rd semester data structure foundation codes:-
 <img src="https://github.com/junaid11P/Data-structure-foundation-/blob/main/Doubly%20Linkedlist.JPG" width="500" height="333">
 5. <a href="Min Heap.py">Min Heap</a>
 <img src="https://github.com/junaid11P/Data-structure-foundation-/blob/main/Min%20Heap.JPG" width="500" height="333">
-
+6. <a href="AVL Tree.py">AVL Tree</a>
+<img src="https://github.com/junaid11P/Data-structure-foundation-/blob/main/AVL%20Tree.JPG" width="500" height="333">
+7. <a href="BST.py">Binary Search Tree (BST)</a>
+<img src="https://github.com/junaid11P/Data-structure-foundation-/blob/main/BST.JPG" width="500" height="333">
