@@ -7,7 +7,7 @@ class Linkedlist:
         self.head=None
         self.size=0
     def insertAtHead(self,element):
-        newNode=self.node(element,self.head)
+        newNode=self.Node(element,self.head)
         if newNode==None:
             print("couldn't create a new node")
             return
@@ -15,7 +15,7 @@ class Linkedlist:
         self.size+=1
         
     def insert_in_between(self,element,previousNodeValue):
-        newNode=self.Node(elemet)
+        newNode=self.Node(element)
         if newNode==None:
             print("couldn't create a new node")
             return
@@ -79,6 +79,38 @@ class Linkedlist:
         
     def deleteAtTail(self):
         if self.size==0:
-            print("")
-                
+            print("Linkedlist is empty")
+            return
+        currentNode=self.head
+        previousNode=None
+        while currentNode.next:
+            previousNode=currentNode
+            currentNode=currentNode.next
+        deletedValue=currentNode.data
+        
+        if previousNode:
+            previousNode.next=None
+            return
+        else:
+            self.head=None
+        self.size-=1
+        return deletedValue
+        
+    def traverseLinkedlist(self):
+        currentNode=self.head
+        while currentNode:
+            print(currentNode.data)
+            currentNode=currentNode.next
+
+if __name__=="__main__":
+    l1=Linkedlist()
+    l1.deleteAtHead()
+    l1.insertAtHead(23)
+    l1.insertAtHead(45)
+    l1.insert_in_between(81,45)
+    l1.insert_in_between(89,42)
+    l1.insertAtTail(90)
+    print("Deleted value is:",l1.deleteAtTail())
+    l1.delete_in_between(23)
+    l1.traverseLinkedlist()
         
