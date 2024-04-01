@@ -7,3 +7,5 @@ This is my 3rd semester data structure foundation codes:-
 <img src="https://github.com/junaid11P/Data-structure-foundation-/blob/main/Queue.JPG" width="500" height="333">
 3. <a href="Singly Linkedlist.py">Singly Linkedlist</a>
 <img src="https://github.com/junaid11P/Data-structure-foundation-/blob/main/Singly%20Linkedlist.JPG" width="500" height="333">
+4. <a href="Doubly Linkedlist.py">Doubly Linkedlist</a>
+<img src="https://github.com/junaid11P/Data-structure-foundation-/blob/main/Doubly%20Linkedlist.JPG" width="500" height="333">
